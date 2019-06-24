@@ -1,0 +1,69 @@
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>
+        <strong>Parking Name</strong>
+      </th>
+      <th>
+        <strong>Parking Distance</strong>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
+        <td>City Market Undergroung Parking </td>
+      </button>
+      <td>200 meter</td>
+    </tr>
+    <tr>
+      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
+        <td>City Market Undergroung Parking </td>
+      </button>
+      <td>200 meter</td>
+    </tr>
+    <tr>
+      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
+        <td>City Market Undergroung Parking </td>
+      </button>
+      <td>200 meter</td>
+    </tr>
+    <tr>
+      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
+        <td>ground Level Parking</td>
+      </button>
+      <td>220 meter</td>
+    </tr>
+    <tr>
+      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
+        <td>High Street Parking</td>
+      </button>
+      <td>260 meter</td>
+    </tr>
+    <tr>
+      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
+        <td>National Hospital Parking </td>
+      </button>
+      <td>240 meter</td>
+    </tr>
+    <tr>
+      <button (click)="onAvailableParking()" class="btn btn-link text-dark">
+        <td>Aisha Parking</td>
+      </button>
+      <td>250 meter</td>
+    </tr>
+    <tr>
+      <button (click)="onAvailableParking()" class="btn btn-link text-dark">
+        <td>Phoenix Parking</td>
+      </button>
+      <td>300 meter</td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="bookPark; else fullParking">
+  <app-visual-parking></app-visual-parking>
+  <app-visual-parking2></app-visual-parking2>
+</div>
+<ng-template #fullParking>
+  <h4 style="display: none">Currently Parking Not Available</h4>
+</ng-template>

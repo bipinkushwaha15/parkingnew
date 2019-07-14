@@ -17,6 +17,7 @@ export class AppComponent {
   showAvailableParking:Parking;
   partialLoc:string;
   searchPlace:SearchPlace;
+  morecity=false;
   found:boolean=false;
   constructor(private search:SearchPlaceService){}
   onKeyPress(){
@@ -34,5 +35,8 @@ export class AppComponent {
           this.found=false;
         }
       }) 
+    }
+    getMoreCity(){
+      this.morecity=true;
     }
 }

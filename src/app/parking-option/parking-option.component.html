@@ -1,3 +1,13 @@
+<div *ngIf="bookPark; else fullParking">
+  <app-visual-parking></app-visual-parking>
+  <app-visual-parking2></app-visual-parking2>
+</div>
+<ng-template #fullParking>
+  <h4 style="display: none">Currently Parking Not Available</h4>
+</ng-template>
+
+
+
 <table class="table table-hover">
   <thead class="thead-dark">
     <tr>
@@ -60,10 +70,3 @@
     </tr>
   </tbody>
 </table>
-<div *ngIf="bookPark; else fullParking">
-  <app-visual-parking></app-visual-parking>
-  <app-visual-parking2></app-visual-parking2>
-</div>
-<ng-template #fullParking>
-  <h4 style="display: none">Currently Parking Not Available</h4>
-</ng-template>

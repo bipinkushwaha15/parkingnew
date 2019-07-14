@@ -1,28 +1,23 @@
-
-
-/* .navbar-nav{
-    width: 100%
-}
-.search-box{
-    margin-left: auto;
-}
-.btn-link {
+a {
     font-family: Poppins-Regular;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.7;
-    color: #57b846 ;
-     margin: 0px; 
+    color: #666666;
+    margin: 0px;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
 }
 
-.btn-link:focus {
+a:focus {
     outline: none !important;
 }
 
-.btn-link:hover {
+a:hover {
     text-decoration: none;
-  color:yellow;
-} */
+  color: #57b846;
+}
+address{
+  color: gray;
+}

@@ -1,132 +1,165 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <div class="container">
-  <div class="row" style="background-color: beige">
-    <div class="col-sm-4">
-      Location
-    </div>
-
-    <div class="col-sm-2">
-      HOME
-    </div>
-
-    <div class="col-sm-2">
-      CONTACT
-    </div>
-
-    <div class="col-sm-2">
-      ABOUT US
-    </div>
-
-    <div class="col-sm-2">
-      LOGIN/SIGNUP
-    </div>
-  </div>
-</div> -->
-<nav class="navbar navbar-expand-xl navbar-dark bg-success">
-  <a class="navbar-brand text-danger">Online Parking Application</a>
-  <!-- <button class="navbar-toggler" type="button" 
-  data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> -->
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link text-dark" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand text-info">Welcome!</a>
-
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link text-success" routerLink="new-cmp">HOME</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-success" href="#">CONTACT US</a>
-    </li>
-
-   <!--   Dropdown 
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        PARKING CHOICE
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item">SELF PARKING</a>
-        <a class="dropdown-item">VALLET PARKING</a>
-      </div>
-    </li> -->
-<!-- 
-    <li class="btn-group">
-      <button type="button" class="btn btn-debug dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-        Action
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-      </div>
-    </li> -->
-    <li class="search-box">
-      <form class="form-inline " action="/action_page.php">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-success " type="submit">Search</button>
-      </form>
-    </li>
-  </ul>
-</nav>
+<app-header></app-header>
 <!-- <img src="assets/imges/test.jpg" alt="Italian Trulli">
- <div class="row">
-    <div class="col-sm-4"> 
-        <img src="assets/imges/test.jpg" alt="Italian Trulli">
-    </div>
-    <div class="col-sm-4">
-      
-        <img src="assets/imges/test.jpg" alt="Italian Trulli">
+   <div class="row">
+      <div class="col-sm-4"> 
+          <img src="assets/imges/test.jpg" alt="Italian Trulli">
       </div>
-    <div class="col-sm-4">
-        <img src="assets/imges/test.jpg" alt="Italian Trulli">
+      <div class="col-sm-4">
+        
+          <img src="assets/imges/test.jpg" alt="Italian Trulli">
+        </div>
+      <div class="col-sm-4">
+          <img src="assets/imges/test.jpg" alt="Italian Trulli">
+      </div>
+    </div> 
+<div *ngIf="Loginfound; else notLogin">
+  <app-login-page></app-login-page>
+</div>
+<ng-template #notLogin>
+  <div class="container-fluid rounded" style="margin-top: 5px">
+    <div class="row">
+      <div class="col-md-2 bg-light">
+        <label for="place"><strong>Enter Location:</strong></label>
+        <input class="form-control mr-sm-2" type="text" (keyup)="onKeyPress()" />
+        <label for="place"><strong>Enter Date:</strong></label>
+        <input class="form-control" type="date" />
+        <label for="place"><strong>Enter Time:</strong></label>
+        <input class="form-control" type="time" />
+        <button class="btn btn-success " type="submit" style="margin-top: 5px" (click)="searchParking()">Search</button>
+      </div>
+      <div class="col-md-10" *ngIf="found;else notavailable">
+        <app-parking-option></app-parking-option>
+      </div>
+      <ng-template #notavailable>{{showAvailableParking}}</ng-template>
     </div>
-  </div>  -->
+  </div>
+</ng-template>
 
+<div *ngIf="RegisterFound">
+  <app-registration-page></app-registration-page>
+</div>
+
+<router-outlet></router-outlet> -->
+<div class="container-fluid" style="background-color: chartreuse;height: 400px; margin-top: 5px;">
+  <div class="row">
+    <!-- <img src="assets/imges/parkinggarage.jpg" alt="img not found" sizes="" srcset=""> -->
+    <div class="col-md-3"></div>
+    <div class="col-md-6 ">
+      <h3 style="margin-top: 100px">Find And Reserve Parking</h3>
+      <h5>Purchase Guranteed Parking in most of Metropolitian cities</h5>
+      <form class="form-inline " action="/action_page.php">
+        <input class="form-control rounded-0" type="text" style="width: 80%" (keyup)="onKeyPress()"
+          placeholder="Where Do you need Parking" />
+        <button class="btn btn-primary rounded-0" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
 <div class="container-fluid" style="margin-top: 5px">
   <div class="row">
-    <div class="col-md-2 bg-light">
-      <label for="place"><strong>Enter Location:</strong></label>
-      <input class="form-control mr-sm-2" type="text" (keyup)="onKeyPress()" />
-      <label for="place"><strong>Enter Date:</strong></label>
-      <input class="form-control" type="date" />
-      <label for="place"><strong>Enter Time:</strong></label>
-      <input class="form-control" type="time" />
-      <button class="btn btn-success " type="submit" style="margin-top: 5px" (click)="searchParking()">Search</button>
+    <div class="col-md-4">
+      <img src="assets/imges/search.png" alt="" class="center" style="margin-left: 100px;">
+      <h4 class="text-center">Search</h4>
+      <p class="text-center">
+        Search and compare all available parking options and prices at thousands of parking lots</p>
     </div>
-    <div class="col-md-10" *ngIf="found;else notavailable">
-      <app-parking-option></app-parking-option>
+    <div class="col-md-4">
+      <img src="assets/imges/location4.png" alt="" class="img-responsive" style="margin-left: 100px;">
+      <h4 class="text-center">Book</h4>
+      <p class="text-center">
+        Pre-purchase the perfect spot and have a guaranteed space waiting for you when you need it.
+      </p>
     </div>
-    <ng-template #notavailable>{{showAvailableParking}}</ng-template>
+    <div class="col-md-4">
+      <img src="assets/imges/Parking1.png" alt="" class="rounded-circle" style="margin-left: 100px;">
+      <h4 class="text-center">Park Happy</h4>
+      <p class="text-center">
+        Redeem your purchase seamlessly at your selected location! It’s that easy. Save time and money with hassle-free
+        parking.
+      </p>
+    </div>
   </div>
 </div>
+<h2 class="text-center" style="margin-top: 5px">Featured Cities</h2>
 <div class="container-fluid">
   <div class="row">
-    <div class="col">  
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <a href="">
+          <img src="assets/imges/bangalore.jpg" alt="" style="width: 100%;height: 220px;" class="img-thumbnail">
+        </a>
+        <div class="caption">
+          <p class="text-center">Bangalore</p>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <a href="">
+          <img src="assets/imges/bangalore.jpg" alt="" style="width: 100%;height: 220px;" class="img-thumbnail">
+        </a>
+        <div class="caption">
+          <p class="text-center">Bangalore</p>
+        </div>
+      </div>
     </div>
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <a href="">
+          <img src="assets/imges/Bhopal.png" alt="" style="width: 100%;height: 220px;" class="img-thumbnail">
+        </a>
+        <div class="caption">
+          <p class="text-center">Bhopal</p>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <a href="">
+          <img src="assets/imges/Bhopal.png" alt="" style="width: 100%;height: 220px;" class="img-thumbnail">
+        </a>
+        <div class="caption">
+          <p class="text-center">Bhopal</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <a href="">
+          <img src="assets/imges/indore2.jpg" alt="" style="width: 100%; height:220px " class="img-thumbnail">
+        </a>
+        <div class="caption">
+          <p class="text-center">Indore</p>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <a href="">
+          <img src="assets/imges/indore2.jpg" alt="" style="width: 100%; height:220px " class="img-thumbnail">
+        </a>
+        <div class="caption">
+          <p class="text-center">Indore</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <a href="">
+          <img src="assets/imges/Gatewayofindia.jpg" alt="" style="width: 100%; height:220px " class="img-thumbnail">
+        </a>
+        <div class="caption">
+          <p class="text-center">Mumbai</p>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <a href="">
+          <img src="assets/imges/Gatewayofindia.jpg" alt="" style="width: 100%; height:220px " class="img-thumbnail">
+        </a>
+        <div class="caption">
+          <p class="text-center">Mumbai</p>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-info" style="margin-left: 45%; width:150px" (click)="getMoreCity()">more Cities..</button>
   </div>
 </div>
-<!-- <router-outlet></router-outlet> -->
+<div *ngIf="morecity">
+  <app-city-service></app-city-service>
+</div>
+<app-footer></app-footer>

@@ -11,6 +11,11 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { VisualParkingComponent } from './visual-parking/visual-parking.component';
 import { VisualParking2Component } from './visual-parking2/visual-parking2.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { RegistrationPageComponent } from './registration-page/registration-page.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { CityServiceComponent } from './city-service/city-service.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +24,11 @@ import { VisualParking2Component } from './visual-parking2/visual-parking2.compo
     ParkingOptionComponent,
     VisualParkingComponent,
     VisualParking2Component,
+    LoginPageComponent,
+    RegistrationPageComponent,
+    HeaderComponent,
+    FooterComponent,
+    CityServiceComponent,
    // Location,
   ],
   imports: [

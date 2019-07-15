@@ -18,3 +18,9 @@ a:hover {
     text-decoration: none;
   color: #696e68;
 }
+button{
+    margin:5px;
+}
+.form-inline{
+    float: right;
+}

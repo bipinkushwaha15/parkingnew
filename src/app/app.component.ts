@@ -36,7 +36,5 @@ export class AppComponent {
         }
       }) 
     }
-    getMoreCity(){
-      this.morecity=true;
-    }
+    
 }

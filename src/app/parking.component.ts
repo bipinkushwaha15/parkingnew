@@ -1,7 +1,9 @@
-
 export class Parking{
-    parking_id:number;
+    parking_id:string;
     parking_name:string;
-    parking_capacity:number;
     parking_address:string;
+    parking_area:string;
+    parking_locality:string;
+    parking_city:string;
+    parking_pin:number;
 }

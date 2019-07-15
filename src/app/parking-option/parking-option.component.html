@@ -1,13 +1,39 @@
-<div *ngIf="bookPark; else fullParking">
-  <app-visual-parking></app-visual-parking>
-  <app-visual-parking2></app-visual-parking2>
+<app-header1></app-header1>
+<div class="container-fluid" style="margin-top: 5px;">
+  <div class="row">
+    <div class="col-md-2">
+      <form action="">
+        <div class="form-group">
+          <label for="Date"><strong>Date</strong></label><br>
+          <label for="From">From</label>
+          <input ngModel type="date" name="date" #fromDate id="date" class="form-control">
+          <label for="From">To</label>
+          <input ngModel type="date" name="date" #toDate id="date" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="Time"><strong>Time</strong></label><br>
+          <label for="From">From</label>
+          <input ngModel type="time" name="time" #fromTime id="time" class="form-control">
+          <label for="From">To</label>
+          <input ngModel type="time" name="time" #toTime id="time" class="form-control">
+        </div>
+        <button class="btn btn-primary" (click)="bookpark(fromDate,toDate,fromTime,toTime)">Submit</button>
+      </form>
+    </div>
+    <div class="col-md-10">
+      <div *ngIf="bookPark; else fullParking">
+        <app-visual-parking></app-visual-parking>
+      </div>
+      <ng-template #fullParking>
+        <h4 style="display: none">Currently Parking Not Available</h4>
+      </ng-template>
+    </div>
+  </div>
 </div>
-<ng-template #fullParking>
-  <h4 style="display: none">Currently Parking Not Available</h4>
-</ng-template>
 
 
 
+<!-- 
 <table class="table table-hover">
   <thead class="thead-dark">
     <tr>
@@ -69,4 +95,4 @@
       <td>300 meter</td>
     </tr>
   </tbody>
-</table>
+</table>  -->

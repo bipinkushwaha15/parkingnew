@@ -1,20 +1,20 @@
-a {
+a.morecity {
     font-family: Poppins-Regular;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #5ed818b2;
-    margin: 5px;
+    font-size: 25px;
+    border:1px solid #c3c3c3;
+    color: #cc3b3b;
+    margin-left: 45%;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
 }
 
-a:focus {
+a.morecity:focus {
     outline: none !important;
 }
 
-a:hover {
+a.morecity:hover {
     text-decoration: none;
-  color: #696e68;
+  color: blue;
 }

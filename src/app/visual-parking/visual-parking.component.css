@@ -1,3 +1,11 @@
+a{
+    position: relative;
+    width: 50px;
+    height: 25px;
+    margin: 5px;
+    float: left;
+    border-radius: 5px;
+}
 .switch{
     position: relative;
     width: 50px;

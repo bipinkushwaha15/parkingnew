@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parkingplace.component.css']
 })
 export class ParkingplaceComponent implements OnInit {
-  desa="jjhjhj";
+
 
   constructor() { }
 

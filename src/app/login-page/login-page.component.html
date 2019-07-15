@@ -1,9 +1,10 @@
-<!--  <div class="container-fluid" *ngIf="loginSuccess;else loginFail"> 
+<app-header1></app-header1>
+<div class="container-fluid" *ngIf="loginSuccess;else loginFail">
   <div class="col-md-12">
     <app-root></app-root>
   </div>
 </div>
-<ng-template #loginFail> 
+<ng-template #loginFail>
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
@@ -45,12 +46,16 @@
             <button class="btn btn-link"> Username / Password?</button>
           </div>
           <div class="text-center p-t-136">
-            <button class="btn btn-link">Create your Account
+            <!-- <button class="btn btn-link">Create your Account
               <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-            </button>
+            </button> -->
+            <a routerLink="/register">
+              Create your Account
+              <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+            </a>
           </div>
         </form>
       </div>
     </div>
   </div>
-</ng-template>   -->
+</ng-template>

@@ -39,7 +39,7 @@
   }
   
   /*---------------------------------------------*/
-  .btn-link {
+  a {
       font-family: Poppins-Regular;
       font-size: 14px;
       line-height: 1.7;
@@ -51,13 +51,13 @@
     -moz-transition: all 0.4s;
   }
   
-  .btn-link:focus {
+  a:focus {
       outline: none !important;
   }
   
-  .btn-link:hover {
+  a:hover {
       text-decoration: none;
-    color: #57b846;
+    color: #696e68;
   }
   
   /*---------------------------------------------*/

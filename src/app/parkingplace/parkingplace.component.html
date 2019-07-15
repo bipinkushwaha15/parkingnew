@@ -1,3 +1,24 @@
-<p>
-  {{desa}}
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel-group">
+        <div class="panel panel-success">
+          <div class="panel-heading font-weight-bold">Booking Information</div>
+          <div class="panel-body"></div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading font-weight-bold">User Information</div>
+            <div class="panel-body"></div>
+          </div>
+          <div class="panel panel-danger">
+              <div class="panel-heading font-weight-bold">Vehicle Information</div>
+              <div class="panel-body">
+                <label for="vehicleNumber:"><strong>Vehicle Number</strong></label>
+                <input ngModel type="text" name="vehicleNumber" style="border:none" required>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="submit" class="btn btn-primary">Book</button>

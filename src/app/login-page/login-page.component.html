@@ -1,61 +1,80 @@
 <app-header1></app-header1>
-<div class="container-fluid" *ngIf="loginSuccess;else loginFail">
-  <div class="col-md-12">
-    <app-root></app-root>
-  </div>
-</div>
-<ng-template #loginFail>
+<!-- <div class="container-fluid" style="background-image: url('assets/imges/bg.jpg')">
+  <div class="row">
+    <div class="col-md-12">
+      <form action="adminHome.html">
+        <div class="container-fluid">
+          <div class="login-box">
+            <h1>Admin Login</h1>
+            <div class="textbox">
+              <i class="fas fa-user"></i>
+              <input ngModel required name="email" #email type="text" placeholder="Email">
+            </div>
+
+            <div class="textbox">
+              <i class="fas fa-lock"></i>
+              <input ngModel required name="password" #password type="password" placeholder="Password">
+            </div>
+
+            <button class="btn" (click)="doLogin(email,password)" routerLink="">Sign-in</button>
+            <span style="color: black"> Forgot?</span>
+            <a routerLink="">Username/Password</a><br>
+           <span style="color: black">Already a member</span> 
+           <a routerLink="" style="color: green">Login</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div> -->
   <div class="limiter">
-    <div class="container-login100">
-      <div class="wrap-login100">
-        <div class="login100-pic js-tilt" data-tilt>
-          <img src="assets/imges/img-01.png" alt="IMG">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-pic js-tilt" data-tilt>
+        <img src="assets/imges/img-01.png" alt="IMG">
+      </div>
+
+      <form class="login100-form validate-form">
+        <span class="login100-form-title">
+          Member Login
+        </span>
+
+        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+          <input class="input100" type="text" name="email" placeholder="Email">
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
         </div>
 
-        <form class="login100-form validate-form">
-          <span class="login100-form-title">
-            Member Login
+        <div class="wrap-input100 validate-input" data-validate="Password is required">
+          <input class="input100" type="password" name="pass" placeholder="Password">
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-lock" aria-hidden="true"></i>
           </span>
+        </div>
 
-          <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-            <input class="input100" type="text" name="email" placeholder="Email">
-            <span class="focus-input100"></span>
-            <span class="symbol-input100">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-            </span>
-          </div>
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" (click)="afterLogin()">
+            Login
+          </button>
+        </div>
 
-          <div class="wrap-input100 validate-input" data-validate="Password is required">
-            <input class="input100" type="password" name="pass" placeholder="Password">
-            <span class="focus-input100"></span>
-            <span class="symbol-input100">
-              <i class="fa fa-lock" aria-hidden="true"></i>
-            </span>
-          </div>
-
-          <div class="container-login100-form-btn">
-            <button class="login100-form-btn" (click)="afterLogin()">
-              Login
-            </button>
-          </div>
-
-          <div class="text-center p-t-12">
-            <span class="txt1">
-              Forgot
-            </span>
-            <button class="btn btn-link"> Username / Password?</button>
-          </div>
-          <div class="text-center p-t-136">
-            <!-- <button class="btn btn-link">Create your Account
-              <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-            </button> -->
-            <a routerLink="/register">
-              Create your Account
-              <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-            </a>
-          </div>
-        </form>
-      </div>
+        <div class="text-center p-t-12">
+          <span class="txt1">
+            Forgot
+          </span>
+          <button class="btn btn-link"> Username / Password?</button>
+        </div>
+        <div class="text-center p-t-136">
+          <a routerLink="/register">
+            Create your Account
+            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+          </a>
+        </div>
+      </form>
     </div>
   </div>
-</ng-template>
+</div>
+
+<app-footer></app-footer>

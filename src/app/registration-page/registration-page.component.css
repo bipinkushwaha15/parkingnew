@@ -8,12 +8,13 @@
       box-sizing: border-box;
   }
 
-  body, html {
-      height: 100%;
-      font-family: Poppins-Regular, sans-serif;
-  }
   
   /*---------------------------------------------*/
+  input [type="radio"]{
+    height:5px;
+    width:5px;
+    font-size: 15px;
+  }
    a{
       font-family: Poppins-Regular;
       font-size: 14px;

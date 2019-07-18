@@ -1,11 +1,15 @@
-a{
-    position: relative;
-    width: 50px;
-    height: 25px;
-    margin: 5px;
-    float: left;
-    border-radius: 5px;
-}
+
+
+Skip to content
+Using Gmail with screen readers
+
+Conversations
+11.74 GB (10%) of 115 GB used
+Manage
+Terms · Privacy · Program Policies
+Last account activity: 2 minutes ago
+Details
+
 .switch{
     position: relative;
     width: 50px;
@@ -13,6 +17,27 @@ a{
     margin: 5px;
     float: left;
 }
+.test1{
+    background-color:  lightgreen ;
+}
+.test2{
+    background-color:peru;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+  }
+  .sub{
+      margin-left: 45%;
+  }
+  .button3 {border-radius: 8px;}
 
 .switch input{display: none;}
 

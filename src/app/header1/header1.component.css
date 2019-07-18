@@ -20,7 +20,16 @@ a:hover {
 }
 button{
     margin:5px;
+    height: 25px;
+    text-align: center;
+    font-family: Poppins-Regular;
 }
 .form-inline{
     float: right;
+}
+input{
+  margin-top: 2px;
+  height: 25px;
+  width: 250px;
+  font-family: Poppins-Regular;
 }

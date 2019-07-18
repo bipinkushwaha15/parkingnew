@@ -15,4 +15,7 @@ export class LoginPageComponent implements OnInit {
   afterLogin(){
     this.loginSuccess=true;
   }
+  doLogin(email,password){
+    console.log(email+" "+password)
+  }
 }

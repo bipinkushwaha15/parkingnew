@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-xl navbar-dark bg-success">
+<nav class="navbar navbar-expand-xl navbar-dark bg-primary">
   <!--   <a class="navbar-brand text-danger">Online Parking Application</a> -->
   <h2 class="uk-text-bold text-uppercase" style="text-align: center">Welcome to Online Parking Application</h2>
   <!-- <button class="navbar-toggler" type="button" 
@@ -74,9 +74,9 @@
     </li> -->
     <form class="form-inline " action="/action_page.php">
       <input ngModel class="form-control rounded-0" type="text" 
-      name="address" #address (keyup)="onKeyPress(address)" routerLink="/schedule"
+      name="address" #address (keyup)="onKeyPress(address)" 
         placeholder="Where Do you need Parking" />
-      <button class="btn btn-primary rounded-0" type="submit">Search</button>
+      <button class="btn btn-primary rounded-0" type="submit" routerLink="/schedule">Search</button>
     </form>
   </ul>
 </nav>       

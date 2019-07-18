@@ -13,8 +13,17 @@ a.morecity {
 a.morecity:focus {
     outline: none !important;
 }
-
+img{
+  height: 100px;
+  width: 120px;
+}
 a.morecity:hover {
     text-decoration: none;
   color: blue;
+}
+searchresult{
+  color: black;
+}
+table{
+  background-color: white;
 }

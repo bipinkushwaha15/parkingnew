@@ -1,26 +1,36 @@
 <app-header1></app-header1>
 <div class="container-fluid" style="margin-top: 5px;">
   <div class="row">
-    <div class="col-md-2">
-      <form action="">
-        <div class="form-group">
-          <label for="Date"><strong>Date</strong></label><br>
-          <label for="From">From</label>
-          <input ngModel type="date" name="date" #fromDate id="date" class="form-control">
-          <label for="From">To</label>
-          <input ngModel type="date" name="date" #toDate id="date" class="form-control">
+    <div class="col-md-3">
+    <!--   <div>{{parkingElement.parking_name}}</div> -->
+      <form>
+        <strong>Date</strong>
+        <div class="row">
+          <div class="col-sm-5">
+            <label for="From">From:</label>
+            <input ngModel type="date" name="date" #fromDate id="date" class="form-control">
+          </div>
+          <div class="col-sm-5">
+            <label for="From">To:</label>
+            <input ngModel type="date" name="date" #toDate id="date" class="form-control">
+          </div>
+        </div><br>
+        <strong>Time</strong>
+        <div class="row">
+          <div class="col-sm-5 form-group">
+            <label for="time">From:</label>
+            <input ngModel type="time" name="time" #fromTime id="time" class="form-control">
+          </div>
+          <div class="col-sm-5 form-group">
+            <label for="time">To:</label>
+            <input ngModel type="time" name="time" #toTime id="time" class="form-control">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="Time"><strong>Time</strong></label><br>
-          <label for="From">From</label>
-          <input ngModel type="time" name="time" #fromTime id="time" class="form-control">
-          <label for="From">To</label>
-          <input ngModel type="time" name="time" #toTime id="time" class="form-control">
-        </div>
-        <button class="btn btn-primary" (click)="bookpark(fromDate,toDate,fromTime,toTime)">Submit</button>
+        <button class="btn btn-primary" (click)="bookpark(fromDate,toDate,fromTime,toTime)" type="submit">
+          Submit</button>
       </form>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-9">
       <div *ngIf="bookPark; else fullParking">
         <app-visual-parking></app-visual-parking>
       </div>

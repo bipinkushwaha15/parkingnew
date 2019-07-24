@@ -1,15 +1,22 @@
-a {
+.header {
     font-family: Poppins-Regular;
     font-size: 18px;
-    line-height: 1.7;
-    color: #5ed818b2;
-    margin: 5px;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
 }
-
+a{
+  margin:5px;
+}
+/* .navbar-brand{
+  color: gray;
+  font-size: 24px;
+  font-family: Poppins-Regular;
+} */
+.navbar-right{
+  margin-left: 70%;
+}
 a:focus {
     outline: none !important;
 }

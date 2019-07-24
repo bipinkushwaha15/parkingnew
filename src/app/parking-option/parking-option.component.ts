@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Time } from '@angular/common';
+import { Parking } from '../parking.component'
 
 @Component({
   selector: 'app-parking-option',
@@ -7,17 +8,22 @@ import { Time } from '@angular/common';
   styleUrls: ['./parking-option.component.css']
 })
 export class ParkingOptionComponent implements OnInit {
-  bookPark:boolean=false;
+  bookPark: boolean = false;
+  @Input('parkingElement')element: {
+    parking_id: string, parking_name: string, parking_address: string, parking_area: string,
+    parking_locality: string, parkinng_city: string, parking_state: string,
+    parking_country: string, parking_pin: string
+  }
   constructor() { }
 
   ngOnInit() {
   }
-  onAvailableParking(){
+  onAvailableParking() {
 
-    this.bookPark=true;
+    this.bookPark = true;
   }
-  bookpark(fromDate:Date,toDate:Date,fromTime:Time,toTime:Time){
-    console.log(fromDate,toDate,fromTime,toTime);
-    this.bookPark=true;
+  bookpark(fromDate: HTMLInputElement, toDate: HTMLInputElement, fromTime: HTMLInputElement, toTime: HTMLInputElement) {
+    console.log(fromDate.value, toDate.value, fromTime.value, toTime.value);
+    this.bookPark = true;
   }
 }

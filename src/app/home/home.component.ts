@@ -2,13 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Parking } from '../parking.component';
 import { ActivatedRoute } from '@angular/router';
 
-export type FuzzyScore = number;
-
-export interface FuzzySegment {
-  value: string;
-  isMatch: boolean;
-}
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -50,23 +43,30 @@ export class HomeComponent implements OnInit {
       parking_state: "Karnataka",
       parking_country: "India",
       parking_pin: 560038
-    },
-    {
-      parking_id: "Bang104",
-      parking_name: "Baiyapanhalli Metro Parking West",
-      parking_address: "Baiyapanhalli Metro Parking,Baiyapanhalli Metro Station, Baiyapanhalli , Baiyapanhalli, Bangalore,560038",
-      parking_area: "Baiyapanhalli",
-      parking_locality: "Baiyapanhalli",
-      parking_city: "Bangalore",
-      parking_state: "Karnataka",
-      parking_country: "India",
-      parking_pin: 560038
-    },
+    }
+  ]
+  parking: Parking[] = [
+    new Parking(
+      "Lko101",
+      "Sahara State Parking",
+      "Sahara State Parking, Hazratganj, Lucknow 226021",
+      "Hazratganj","Hazratganj","Lucknow","Uttar Pradesh","India",226021),
+    new Parking(
+      "Lko102",
+      "Lucknow Municipal Underground Parking",
+      "Lucknow Municipal Underground Parking, Indira Nagar, Lucknow 226022",
+      "Indira Nagar","Indira Nagar","Lucknow","Uttar Pradesh","India",
+      226022),
+    new Parking(
+      "Bang104",
+      "Baiyapanhalli Metro Parking West",
+      "Baiyapanhalli Metro Parking,Baiyapanhalli Metro Station, Baiyapanhalli , Baiyapanhalli, Bangalore,560038",
+      "Baiyapanhalli", "Baiyapanhalli", "Lucknow", "Karnataka", "India", 560038),
   ]
   values: string[] = [];
   final: string[] = [];
   address: string[] = [];
-  emptyString:boolean;
+  emptyString: boolean;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -74,18 +74,20 @@ export class HomeComponent implements OnInit {
 
   onKeyPress(event) {
     //this.final=this.park;
-    let partLoc =event.target.value;
-    for (let i = 0; i < this.park.length; i++) {
-      this.address[i] = this.park[i].parking_address;
-      //console.log(this.address[i]);
+    let partLoc = event.target.value;
+    for (let i = 0; i < this.parking.length; i++) {
+      this.address[i] = this.parking[i].parking_address;
+      console.log(this.address[i]);
     }
     for (let i = 0; i < this.address.length; i++) {
       //console.log(this.address[i].indexOf(partLoc)+"  "+this.address[i].lastIndexOf(partLoc));
-      console.log(this.address[i].match(partLoc));
-      if (this.address[i].match(partLoc)){
+      console.log(this.address[i].toLocaleLowerCase().trim().match(partLoc));
+      if (this.address[i].toLowerCase().trim().match(partLoc)){
         this.final[i] = this.address[i];
       }
     }
+    console.log(this.final.length);
+    this.values=this.final;
   }
   getParking() {
     console.log("hello");
@@ -93,7 +95,7 @@ export class HomeComponent implements OnInit {
   selectParking(event) {
     alert(event.string.value);
   }
-  getcity() {
-    console.log();
+  getcity(city:HTMLLinkElement) {
+    console.log(city.nodeValue);
   }
 }

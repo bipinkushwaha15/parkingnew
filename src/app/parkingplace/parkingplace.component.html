@@ -5,23 +5,29 @@
     <div class="col-md-6">
       <div class="panel-group">
         <div class="panel panel-success">
-          <div class="panel-heading font-weight-bold">Booking Information</div>
+            <div class="panel-heading">
+              <h3 class="panel-title">Booking Information</h3>
+            </div>
           <div class="panel-body"></div>
         </div>
         <div class="panel panel-primary">
-            <div class="panel-heading font-weight-bold">User Information</div>
+            <div class="panel-heading">
+                <h3 class="panel-title">User Information</h3>
+              </div>
             <div class="panel-body"></div>
           </div>
           <div class="panel panel-danger">
-              <div class="panel-heading font-weight-bold">Vehicle Information</div>
+              <div class="panel-heading">
+                  <h3 class="panel-title">Vehicle Information</h3>
+                </div>
               <div class="panel-body">
-                <label for="vehicleNumber:"><strong>Vehicle Number</strong></label>
-                <input ngModel type="text" name="vehicleNumber" style="border:none" required>
+                <label for="vehicleNumber"><strong>Vehicle Number:</strong></label>
+                <input ngModel type="text" name="vehicleNumber" id="vehicleNumber" required>
               </div>
             </div>
       </div>
     </div>
   </div>
 </div>
-<button type="submit" class="btn btn-primary">Book</button>
+<button type="submit" class="btn btn-primary" type="submit">Book</button>
 <app-footer></app-footer>

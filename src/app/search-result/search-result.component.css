@@ -1,0 +1,9 @@
+.searchresult:focus{
+    color: blue;
+  }
+  .searchresult:hover{
+    color:Black;
+  }
+  ul{
+    background-color: white
+  }

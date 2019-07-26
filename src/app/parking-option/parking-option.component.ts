@@ -9,17 +9,13 @@ import { Parking } from '../parking.component'
 })
 export class ParkingOptionComponent implements OnInit {
   bookPark: boolean = false;
-  @Input('parkingElement')element: {
-    parking_id: string, parking_name: string, parking_address: string, parking_area: string,
-    parking_locality: string, parkinng_city: string, parking_state: string,
-    parking_country: string, parking_pin: string
-  }
+  addressIs:string;
+  @Input('parkingElement')element: Parking;
   constructor() { }
 
   ngOnInit() {
   }
   onAvailableParking() {
-
     this.bookPark = true;
   }
   bookpark(fromDate: HTMLInputElement, toDate: HTMLInputElement, fromTime: HTMLInputElement, toTime: HTMLInputElement) {

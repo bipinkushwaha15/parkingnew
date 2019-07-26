@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CityServiceComponent } from './city-service/city-service.component';
 import { HomeComponent } from './home/home.component';
 import { Header1Component } from './header1/header1.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { Header1Component } from './header1/header1.component';
     CityServiceComponent,
     HomeComponent,
     Header1Component,
-    //Location,
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule,

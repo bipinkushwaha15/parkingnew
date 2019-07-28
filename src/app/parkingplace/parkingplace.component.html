@@ -1,4 +1,4 @@
-<app-header1></app-header1>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
@@ -6,7 +6,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6" style="border: 1px solid gray; margin:20px 0px 0px 20px; border-radius: 5px">
+    <div class="col-md-6" 
+    style="border: 1px solid gray; margin:20px 0px 0px 20px; border-radius: 5px"
+    *ngFor="let bookinng of bookingOut">
       <div class="col-md-12">
         <h6 style="padding: 8px;"><strong>Parking Deatil:</strong></h6><hr>
       </div>
@@ -19,8 +21,19 @@
         </div>
       </div>
       <div class="col-md-12">
-        <strong>Parking Address:</strong>
+        <strong>Parking Address:{{bookinng.address}}</strong>
       </div>
+      <div class="row" >
+          <div class="col-md-6">
+            <strong>Date From:{{bookinng.booking_date}}</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Booking Time:{{bookinng.bookingFrom_time}}</strong>
+          </div>
+          <div class="col-md-3">
+              <strong>{{bookinng.bookingTo_time}}</strong>
+            </div>
+        </div>
     </div>
   </div>
   <div class="row">
@@ -36,34 +49,4 @@
     </div>
   </div>
   <br>
-  <!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="panel-group">
-        <div class="panel panel-success">
-          <div class="panel-heading">
-            <h3 class="panel-title">Booking Information</h3>
-          </div>
-          <div class="panel-body"></div>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">User Information</h3>
-          </div>
-          <div class="panel-body"></div>
-        </div>
-        <div class="panel panel-danger">
-          <div class="panel-heading">
-            <h3 class="panel-title">Vehicle Information</h3>
-          </div>
-          <div class="panel-body">
-            <label for="vehicleNumber"><strong>Vehicle Number:</strong></label>
-            <input ngModel type="text" name="vehicleNumber" id="vehicleNumber" required>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
   <button type="submit" class="btn btn-primary" type="submit">Book</button>
-  <app-footer></app-footer>

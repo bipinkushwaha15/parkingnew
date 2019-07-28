@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Booking } from '../booking.model';
 
 @Component({
   selector: 'app-parkingplace',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParkingplaceComponent implements OnInit {
 
+  @Input() bookingOut:Booking;
 
   constructor() { }
 

@@ -12,15 +12,15 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li  routeLinkActive="active current">
-          <a routerLink="/" class="header" style="margin-left: 40%">Home</a>
+          <a routerLink="/" class="header" style="margin-left: 40%" (click)="onSelect('Home')">Home</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li  routeLinkActive="active current">
-          <a routerLink="/Login" class="header">Login</a>
+          <a href="#" class="header" (click)="onSelect('Login')">Login</a>
         </li>
         <li  routeLinkActive="active current">
-          <a routerLink="/register" style="font-size: 18px;">Register</a>
+          <a href="#" style="font-size: 18px;" (click)="onSelect('Register')">Register</a>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle header" role="button">

@@ -19,6 +19,8 @@ import { CityServiceComponent } from './city-service/city-service.component';
 import { HomeComponent } from './home/home.component';
 import { Header1Component } from './header1/header1.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { StaticDataComponent } from './static-data/static-data.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { SearchResultComponent } from './search-result/search-result.component';
     HomeComponent,
     Header1Component,
     SearchResultComponent,
+    SearchBarComponent,
+    StaticDataComponent,
   ],
   imports: [
     BrowserModule,

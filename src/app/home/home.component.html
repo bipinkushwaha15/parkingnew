@@ -1,132 +1,37 @@
-<app-header></app-header>
+<app-header (menuSelected)="onNavigate($event)"></app-header>
+<div class="col-md-12">
+  <app-login-page *ngIf="loadedMenu==='Login'"></app-login-page>
+  <app-registration-page *ngIf="loadedMenu==='Register'"></app-registration-page>
+</div>
 <div class="container-fluid" style="background-color: gray;height: 400px; margin-top: 5px;">
   <div class="row">
     <!-- <img src="assets/imges/parkinggarage.jpg" alt="img not found" sizes="" srcset=""> -->
     <div class="col-md-3"></div>
-    <div class="col-md-6 ">
-      <h3 style="margin-top: 100px">Find And Reserve Parking</h3>
-      <h5>Purchase Guranteed Parking in most of Metropolitian cities</h5>
-      <form class="form-inline " action="/action_page.php">
-        <input class="form-control" type="text" id="loc" style="width: 80%" name="loc" [(ngModel)]="searchInput"
-          (keyup)="onKeyPress($event)" placeholder="Where Do you need Parking" />
-        <div *ngIf="searchInputEntered">
-          <button class="btn btn-primary rounded-0" type="submit" (click)="getParking(searchInput)"
-            routerLink="/schedule">Search
-          </button>
-        </div>
-        <div *ngIf="values; else noData" style="width: 80%">
-          <app-search-result *ngFor="let i of values" [finalVar]="i" (selectAddress)="onselect(i)"></app-search-result>
-        </div>
-        <ng-template #noData>
-          <h3>No data Found</h3>
-        </ng-template>
-      </form>
+    <div class="col-md-6">
+      <app-search-bar *ngIf="loadedMenu!=='Login' && loadedMenu!=='Register'" (getAddress)="onsearch($event)">
+      </app-search-bar>
     </div>
     <div class="col-md-3"></div>
   </div>
 </div>
-<h2 class="text-center" style="margin-top: 5px">Featured Cities</h2>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3">
-      <div class="thumbnail">
-        <form>
-          <img src="assets/imges/bangalore.jpg" alt="" style="width: 100%;height: 220px;" class="img-thumbnail">
-          <div class="caption">
-            <!-- <input type="text" ngModel name="blr" #bangalore style="border:none"> -->
-            <a class="text-center" style="cursor: pointer;" #cityName (click)="getcity('Bangalore')">Bangalore </a>
-          </div>
-        </form>
-      </div>
-      <div class="thumbnail">
-        <a routerLink="/parkingOption/:city?=bangalore" (click)="getcity('Bangalore')">
-          <img src="assets/imges/bangalore.jpg" alt="" style="width: 100%;height: 220px;" class="img-thumbnail">
-          <div class="caption">
-            <p class="text-center">Bangalore</p>
-          </div>
-        </a>
+    <div class="col-md-12">
+      <div *ngIf="searchresult">
+        <app-parking-option *ngIf="searchInput" [addressIs]="searchResult">
+        </app-parking-option>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="thumbnail">
-        <a routerLink="/parkingOption/:city?=Bhopal" (click)="getcity('Bhopal')">
-          <img src="assets/imges/Bhopal.png" alt="" style="width: 100%;height: 220px;" class="img-thumbnail">
-        </a>
-        <div class="caption">
-          <p class="text-center">Bhopal</p>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <a href="#" (click)="getcity('Bhopal')">
-          <img src="assets/imges/Bhopal.png" alt="" style="width: 100%;height: 220px;" class="img-thumbnail">
-        </a>
-        <div class="caption">
-          <p class="text-center">Bhopal</p>
-        </div>
-      </div>
+    <div class="col-md-12">
+      <app-city-service *ngIf="loadedMenu!=='Login' && loadedMenu!=='Register' &&!searchresult">
+      </app-city-service>
     </div>
-    <div class="col-md-3">
-      <div class="thumbnail">
-        <a routerLink="/parkingOption/:city?=Indore" (click)="getcity('Indore')">
-          <img src="assets/imges/indore2.jpg" alt="" style="width: 100%; height:220px " class="img-thumbnail">
-        </a>
-        <div class="caption">
-          <p class="text-center">Indore</p>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <a href="#" (click)="getcity('Indore')">
-          <img src="assets/imges/indore2.jpg" alt="" style="width: 100%; height:220px " class="img-thumbnail">
-        </a>
-        <div class="caption">
-          <p class="text-center">Indore</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="thumbnail">
-        <a routerLink="/parkingOption/:city?=Mumbai" (click)="getcity('Mumbai')">
-          <img src="assets/imges/Gatewayofindia.jpg" alt="" style="width: 100%; height:220px " class="img-thumbnail">
-        </a>
-        <div class="caption">
-          <p class="text-center">Mumbai</p>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <a href="#" (click)="getcity('Mumbai')">
-          <img src="assets/imges/Gatewayofindia.jpg" alt="" style="width: 100%; height:220px " class="img-thumbnail">
-        </a>
-        <div class="caption">
-          <p class="text-center">Mumbai</p>
-        </div>
-      </div>
-    </div>
-    <a class="morecity" routerLink="/cities">more city...</a>
   </div>
 </div>
 <div class="container-fluid" style="margin-top: 5px">
   <div class="row">
-    <div class="col-md-4">
-      <img src="assets/imges/search.png" alt="" class="center" style="margin-left: 120px;">
-      <h4 class="text-center">Search</h4>
-      <p class="text-center">
-        Search and compare all available parking options and prices at thousands of parking lots</p>
-    </div>
-    <div class="col-md-4">
-      <img src="assets/imges/location4.png" alt="" class="img-responsive" style="margin-left: 120px;">
-      <h4 class="text-center">Book</h4>
-      <p class="text-center">
-        Pre-purchase the perfect spot and have a guaranteed space waiting for you when you need it.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <img src="assets/imges/Parking1.png" alt="" class="rounded-circle" style="margin-left: 120px;">
-      <h4 class="text-center">Park Happy</h4>
-      <p class="text-center">
-        Redeem your purchase seamlessly at your selected location! It’s that easy. Save time and money with hassle-free
-        parking.
-      </p>
-    </div>
+    <app-static-data *ngIf="loadedMenu!=='Login' && loadedMenu!=='Register' &&!searchresult">
+    </app-static-data>
   </div>
 </div>
-<app-footer></app-footer>
+<app-footer *ngIf="loadedMenu!=='Login' && loadedMenu!=='Register'"></app-footer>

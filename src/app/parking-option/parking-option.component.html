@@ -1,40 +1,40 @@
-<app-header1></app-header1>
 <div class="container-fluid" style="margin-top: 5px;">
   <div class="row">
     <div class="col-md-3">
-    <!--   <div>{{parkingElement.parking_name}}</div> -->
-    <div (selectedAddress)="addressIs=$event">{{addressIs}}</div>
-    <p></p>
+      <!--   <div>{{parkingElement.parking_name}}</div> -->
+      <div (searchInput)="getAddress($event)">{{addressIs}}</div>
       <form>
-        <strong>Date</strong>
-        <div class="row">
-          <div class="col-sm-5">
-            <label for="From">From:</label>
-            <input ngModel type="date" name="date" #fromDate id="date" class="form-control">
+        <h4>Date</h4>
+        <div class="row" *ngIf="dateChange">
+          <div class="col-md-12">
+            <label for="Date">From:</label>
+            <input type="date" name="date" #date id="date" class="form-control">
           </div>
-          <div class="col-sm-5">
-            <label for="From">To:</label>
-            <input ngModel type="date" name="date" #toDate id="date" class="form-control">
-          </div>
+        </div>
+        <div *ngIf="!dateChange">
+          <a style="cursor: pointer; color: black" (click)="changeDateRequest()">
+            {{currentDate |date: 'yyyy-MM-dd'}}
+          </a>
+          <!-- <span>"Click on the date to change the date"</span> -->
         </div><br>
-        <strong>Time</strong>
+        <h4>Time</h4>
         <div class="row">
-          <div class="col-sm-5 form-group">
+          <div class="col-md-6 form-group">
             <label for="time">From:</label>
-            <input ngModel type="time" name="time" #fromTime id="time" class="form-control">
+            <input type="time" name="time" #fromTime id="time" class="form-control">
           </div>
-          <div class="col-sm-5 form-group">
+          <div class="col-md-6 form-group">
             <label for="time">To:</label>
             <input ngModel type="time" name="time" #toTime id="time" class="form-control">
           </div>
         </div>
-        <button class="btn btn-primary" (click)="bookpark(fromDate,toDate,fromTime,toTime)" type="submit">
+        <button class="btn btn-primary" (click)="bookpark(date,fromTime,toTime)" type="submit">
           Submit</button>
       </form>
     </div>
     <div class="col-md-9">
       <div *ngIf="bookPark; else fullParking">
-        <app-visual-parking></app-visual-parking>
+        <app-parkingplace *ngFor="let booki of book" [bookingOut]="booki"></app-parkingplace>
       </div>
       <ng-template #fullParking>
         <h4 style="display: none">Currently Parking Not Available</h4>
@@ -42,69 +42,3 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>
-
-
-<!-- 
-<table class="table table-hover">
-  <thead class="thead-dark">
-    <tr>
-      <th>
-        <strong>Parking Name</strong>
-      </th>
-      <th>
-        <strong>Parking Distance</strong>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
-        <td>City Market Undergroung Parking </td>
-      </button>
-      <td>200 meter</td>
-    </tr>
-    <tr>
-      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
-        <td>City Market Undergroung Parking </td>
-      </button>
-      <td>200 meter</td>
-    </tr>
-    <tr>
-      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
-        <td>City Market Undergroung Parking </td>
-      </button>
-      <td>200 meter</td>
-    </tr>
-    <tr>
-      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
-        <td>ground Level Parking</td>
-      </button>
-      <td>220 meter</td>
-    </tr>
-    <tr>
-      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
-        <td>High Street Parking</td>
-      </button>
-      <td>260 meter</td>
-    </tr>
-    <tr>
-      <button class="btn btn-link text-dark" (click)="onAvailableParking()">
-        <td>National Hospital Parking </td>
-      </button>
-      <td>240 meter</td>
-    </tr>
-    <tr>
-      <button (click)="onAvailableParking()" class="btn btn-link text-dark">
-        <td>Aisha Parking</td>
-      </button>
-      <td>250 meter</td>
-    </tr>
-    <tr>
-      <button (click)="onAvailableParking()" class="btn btn-link text-dark">
-        <td>Phoenix Parking</td>
-      </button>
-      <td>300 meter</td>
-    </tr>
-  </tbody>
-</table>  -->
